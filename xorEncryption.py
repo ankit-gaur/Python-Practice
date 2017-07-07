@@ -5,7 +5,7 @@ if(len(sys.argv)!=4):
 
 file = open(str(sys.argv[1]), "rb")
 outFile = open(str(sys.argv[2]), "w")
-key  = str(sys.argv[3]) # key of anysize
+key  = str(sys.argv[3]) # string of any size
 
 
 try:
@@ -18,6 +18,7 @@ try:
         newByte = ord(byte) ^ keychar
         outFile.write(chr(newByte))
         byte = file.read(1)
+        count += 1
 finally:
     file.close()
 
